@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="
+	http://www.springframework.org/schema/context" 
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:util="http://www.springframework.org/schema/util" 
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util.xsd">
+ 
+     <!-- Stand alone List -->
+ 	<util:list list-class="java.util.LinkedList" id="l1">
+ 		<value>Nehal</value>
+ 		<value>Daksh</value>
+ 		<value>Suman</value>
+ 		<value>Vikas</value>
+ 	</util:list>
+ 	
+ 	<!-- Stand alone Map -->
+ 	<util:map map-class="java.util.HashMap" id="m1">
+ 		<entry key="Math" value="2000"/>
+ 		<entry key="Science" value="3000"/>
+ 		<entry key="SST" value="4000"/>
+ 		<entry key="Physics" value="5000"/>
+ 	</util:map>
+ 	
+ 	<!-- Stand alone Properties -->
+ 	<!-- Can be used for db connections -->
+ 	<util:properties id="p1">
+ 		<prop key="driver">com.jdbc.Driver</prop>
+ 		<prop key="user">narora</prop>
+ 		<prop key="pass">12345</prop>
+ 		<prop key="url">https://localhost:8080</prop>
+ 	</util:properties>
+    <!-- bean definitions here -->
+    <bean class="com.springcore.standalone.collection.Information" name="test">
+    	<property name="names" ref="l1" />
+    	<property name="feeStructure" ref="m1" />
+    	<property name="properties" ref="p1" />
+    </bean>
+ 
+    
+</beans>
